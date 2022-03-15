@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  stories: ["../src/components/**/*.stories.[tj]s"],
+  stories: ["../src/components/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     // "@storybook/addon-knobs/register",
     "@storybook/addon-links",
@@ -18,4 +18,13 @@ module.exports = {
   core: {
     builder: "webpack5",
   },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+    }
+  }
 };
