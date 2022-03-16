@@ -1,8 +1,9 @@
-import * as React from 'react';
-import "./button.scss";
+import * as React from "react";
+import { StyledButton } from "./style";
+import { ButtonProps } from "./type";
 
-const Button = ({ message = "Hello world" }) => {
-  console.log("this is button abc");
-  return <button>{message}</button>;
+const Button = (props: ButtonProps) => {
+  const { children, ...rest } = props;
+  return <StyledButton>{children}</StyledButton>;
 };
 export default Button;

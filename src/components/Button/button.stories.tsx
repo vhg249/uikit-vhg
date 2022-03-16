@@ -1,9 +1,14 @@
 import * as React from "react";
 import Button from ".";
 import { withKnobs, text } from "@storybook/addon-knobs";
-export default { title: "Button component", decorators: [withKnobs] };
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-export const button = () => {
-  const message = text("Text", "Click here now!");
-  return <Button message={message}></Button>;
-};
+export default {
+  title: "Button component",
+  component: Button,
+} as ComponentMeta<typeof Button>;
+
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = { backgroundColor: '#ff0', children: 'Button' };
