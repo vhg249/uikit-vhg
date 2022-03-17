@@ -19,7 +19,7 @@ export interface IButton {
   disabled?: boolean;
 }
 export interface ButtonProps extends IButton{
-  // children?: React.ReactNode;
+  children?: React.ReactNode;
   label?: string;
   
 }
