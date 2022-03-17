@@ -5,12 +5,10 @@ const getStyledScale = (scale: string) => {
   if (scale === scales.LG)
     return `
         width: 370px;
-        aspect-ratio: 7/1;
     `;
   else if (scale === scales.MD)
     return `
         width: 180px;
-        aspect-ratio: 7/1;
     `;
 };
 
@@ -21,7 +19,7 @@ export const StyledButton = styled.div<IButton>`
   & > img {
     width: 100%;
   }
-  & > p {
-    font-family: "UTMKabel";
+  & > p{
+      font-family: 'UTMKabel';
   }
 `;

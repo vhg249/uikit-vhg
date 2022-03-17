@@ -1,11 +1,8 @@
 import { createGlobalStyle, css } from "styled-components";
 import UTMFont from "../assets/fonts/UTMKabelKT.ttf";
 
-export const fontUrl =
-  "https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900";
-
 export const bodyStyles = css`
-  font-family: "Nunito Sans";
+  font-family: 'Poppins', sans-serif;
 `;
 
 const fontStyle = css`
@@ -17,6 +14,11 @@ const fontStyle = css`
 
 export const GlobalStyle = createGlobalStyle`
   ${fontStyle}
+  
  body {
    ${bodyStyles}
- }`;
+ }
+ p{
+   margin: 0;
+ }
+`;
