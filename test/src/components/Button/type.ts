@@ -13,9 +13,13 @@ export const variants = {
 export type Scale = typeof scales[keyof typeof scales];
 export type Variant = typeof variants[keyof typeof variants];
 
-export interface ButtonProps {
-  children?: React.ReactNode;
+export interface IButton {
   scale?: Scale;
   variant?: Variant;
   disabled?: boolean;
+}
+export interface ButtonProps extends IButton{
+  // children?: React.ReactNode;
+  label?: string;
+  
 }

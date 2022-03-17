@@ -1,7 +1,8 @@
 import { scales } from "./type";
 
-export const scleVariants = {
+
+export const scaleVariants = {
     [scales.LG]: {
-        
+        width: "369px"
     }
 }
