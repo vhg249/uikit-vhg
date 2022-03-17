@@ -4,10 +4,12 @@ import { ButtonProps } from "./type";
 import background from "../../assets/images/pink-button.png";
 
 const Button = (props: ButtonProps) => {
-  const { children, ...rest } = props;
+  const { label, ...rest } = props;
+  
   return (
-    <StyledButton>
-      {children}
+    <StyledButton scale="lg">
+      <img src={background} />
+      <p>{label}</p>
     </StyledButton>
   );
 };

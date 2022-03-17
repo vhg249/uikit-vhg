@@ -1,13 +1,27 @@
-import styled from "styled-components";
-import { ButtonProps } from "./type";
-import background from "../../assets/images/pink-button.png";
+import styled, { ThemedStyledFunction } from "styled-components";
+import { ButtonProps, IButton, scales } from "./type";
 
-export const StyledButton = styled.button<ButtonProps>`
-    background-color: #2172e5;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    color: white;
-    background-image: url(${background});
-    background-size: cover;
+const getStyledScale = (scale: string) => {
+  if (scale === scales.LG)
+    return `
+        width: 370px;
+        aspect-ratio: 7/1;
+    `;
+  else if (scale === scales.MD)
+    return `
+        width: 180px;
+        aspect-ratio: 7/1;
+    `;
+};
+
+export const StyledButton = styled.div<IButton>`
+  position: relative;
+  ${(p) => getStyledScale(p.scale)};
+
+  & > img {
+    width: 100%;
+  }
+  & > p {
+    font-family: "UTMKabel";
+  }
 `;

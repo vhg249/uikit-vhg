@@ -6,9 +6,15 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 export default {
   title: "Button component",
   component: Button,
+  argTypes: {
+    scale: {
+      options: ['lg', 'md', 'sm'],
+      control: { type: 'select' },
+    },
+  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = { backgroundColor: '#ff0', children: 'Button' };
+Primary.args = { label: 'Hello', scale: 'lg' };
