@@ -13097,7 +13097,7 @@ uglify-js@^3.1.4:
   integrity sha512-6iCVm2omGJbsu3JWac+p6kUiOpg3wFO2f8lIXjfEb8RrmLjzog1wTPMmwKB7swfzzqxj9YM+sGUM++u1qN4qJg==
 
 "uikit-vhg@file:../test":
-  version "1.0.4"
+  version "1.0.6"
   dependencies:
     "@storybook/addon-essentials" "^6.4.19"
     "@storybook/addon-links" "^6.4.19"

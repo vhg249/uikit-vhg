@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noImplicitAny": true,
-    "types": ["uikit-vhg"]
+    // "types": ["uikit-vhg"]
   },
-  "include": ["src"]
+  "include": ["src","index.d.ts"]
 }
