@@ -15,7 +15,7 @@ import {
 import { useEffect } from "react";
 import { AlertProps } from "./type";
 
-const Alert = (props: AlertProps) => {
+const Alert: React.FC<AlertProps>= (props: AlertProps) => {
   let color: any;
   let srcImage: any;
   if (props.variant === "Error") {
@@ -38,7 +38,7 @@ const Alert = (props: AlertProps) => {
   };
   return (
     <>
-      <Notice color={color}>
+      <Notice color={color} size={props.size}>
         <NoticeClose>
           {/* <NoticeCloseImage onClick={onCloseNotification}>
             <img src={srcImage} alt="Notice" />
@@ -46,10 +46,10 @@ const Alert = (props: AlertProps) => {
         </NoticeClose>
         <NoticeText>
           <NoticeTextHeader>
-            <TextHeader color={color}>{props.variant} !</TextHeader>
+            <TextHeader size={props.size} color={color}>{props.variant} !</TextHeader>
           </NoticeTextHeader>
-          <NoticeTextContent>
-            <Text color={color}>{props.message}</Text>
+          <NoticeTextContent size={props.size} >
+            <Text size={props.size} color={color}>{props.message}</Text>
           </NoticeTextContent>
         </NoticeText>
       </Notice>

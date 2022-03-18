@@ -4,7 +4,7 @@ import { withKnobs, text } from "@storybook/addon-knobs";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "Button component",
+  title: "Components/Button",
   component: Button,
   argTypes: {
     scale: {
