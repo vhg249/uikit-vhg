@@ -3,7 +3,10 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 module.exports = {
   entry: "/src/index.ts",
-  externals: [nodeExternals()],
+  externals: {
+    "react": "commonjs react",
+    "react-dom": "commonjs react-dom",
+ },
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),

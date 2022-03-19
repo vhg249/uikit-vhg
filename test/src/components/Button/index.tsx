@@ -1,21 +1,44 @@
 import * as React from "react";
 import { StyledButton } from "./style";
-import { ButtonProps } from "./type";
+import { ButtonProps, variants } from "./type";
 import PrimaryBg from "../../assets/images/pink-button.png";
 import PrimaryBgActive from "../../assets/images/pink-button-active.png";
-import DisabledButton from "../../assets/images/button-disable.png";
+import SecondaryBg from "../../assets/images/blue-button.png";
+import SecondaryBgActive from "../../assets/images/blue-button-active.png";
 
 const Button = (props: ButtonProps) => {
-  const { label, scale, children, ...rest } = props;
+  const { label, scale, children, disabled, variant, ...rest } = props;
   const [isActive, setIsActive] = React.useState<boolean>(false);
+  const [bgButton, setBgButton] = React.useState(PrimaryBg);
+  const [bgButtonActive, setBgButtonActive] = React.useState(PrimaryBgActive);
+
+  React.useEffect(() => {
+    getVariantImage(variant);
+  }, [])
+  
+
+  const getVariantImage = (variant: string) => {
+    switch (variant) {
+      case variants.SECONDARY:
+        setBgButton(SecondaryBg);
+        setBgButtonActive(SecondaryBgActive);
+        break;
+      default:
+        setBgButton(PrimaryBg);
+        setBgButtonActive(PrimaryBgActive);
+        break;
+    }
+  }
 
   return (
     <StyledButton
       scale={scale}
+      variant={variant}
       onMouseEnter={() => setIsActive(true)}
       onMouseLeave={() => setIsActive(false)}
+      disabled={disabled}
     >
-      <img src={isActive ? PrimaryBgActive : PrimaryBg} />
+      <img src={isActive ? bgButtonActive : bgButton} />
       <p>{children}</p>
     </StyledButton>
   );

@@ -5,6 +5,7 @@ export interface IFlex {
   justify?: string;
   align?: string;
   gap?: string;
+  customStyle?: string;
 }
 
 export interface FlexProps extends IFlex {

@@ -7,4 +7,5 @@ export const StyledFlex = styled.div<IFlex>`
     align-items: ${(p) => p.align};
     flex-direction: ${(p) => p.direction};
     gap: ${(p) => p.gap};
+    ${(p) => p.customStyle};
 `;

@@ -8,6 +8,7 @@ export const scales = {
 
 export const variants = {
   PRIMARY: "primary",
+  SECONDARY: "secondary"
 };
 
 export type Scale = typeof scales[keyof typeof scales];
@@ -21,5 +22,4 @@ export interface IButton {
 export interface ButtonProps extends IButton{
   children?: React.ReactNode;
   label?: string;
-  
 }
