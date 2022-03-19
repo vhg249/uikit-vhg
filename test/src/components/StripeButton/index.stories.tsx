@@ -1,12 +1,12 @@
 import * as React from "react";
 import { withKnobs, text } from "@storybook/addon-knobs";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { scales, variants } from "./type";
+import { scales, variants } from "../Button/type";
 import Flex from "../Flex";
 import Button from ".";
 
 export default {
-  title: "Components/Button",
+  title: "Components/StripeButton",
   component: Button,
   argTypes: {
     scale: {

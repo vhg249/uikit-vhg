@@ -8,7 +8,7 @@ export const scales = {
 
 export const variants = {
   PRIMARY: "primary",
-  SECONDARY: "secondary"
+  SECONDARY: "secondary",
 };
 
 export type Scale = typeof scales[keyof typeof scales];

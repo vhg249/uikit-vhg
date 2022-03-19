@@ -56,5 +56,5 @@ const getStyledScale = (scale: string) => {
   }
 };
 const getDisabledStyle = (disabled: boolean) => {
-  if(disabled === false) return `filter: grayscale(100%);`
+  if(disabled === true) return `filter: grayscale(100%);`
 }
