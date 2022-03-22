@@ -2,6 +2,7 @@ import React from "react";
 // import "./App.css";
 import { Button } from "uikit-vhg";
 import { Alert } from "uikit-vhg";
+import { NavRight } from "uikit-vhg";
 
 function App() {
   console.log(Button);
@@ -9,10 +10,13 @@ function App() {
   return (
     <div className="App">
       <Button scale="md">Hello</Button>
-      <div style={{ display: "flex" }}>
-        <Alert message="THis is alert" variant="Success" size="lg" />
-
-      </div>
+      <Alert
+        message="THis is alert"
+        variant="Success"
+        size="lg"
+        timeToShow={1000000}
+      />
+      <NavRight size="lg" />
     </div>
   );
 }

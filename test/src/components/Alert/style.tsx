@@ -79,6 +79,7 @@ export const Notice = styled.div<{ color: string; size?: string }>`
   gap: 10px;
   z-index: 10000;
   border: 1px solid ${(props) => props.color};
+  width:fit-content;
   min-width:${(props) => getMinWidth(props.size)};
 `;
 export const NoticeText = styled.div`

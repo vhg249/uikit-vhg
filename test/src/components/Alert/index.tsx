@@ -12,12 +12,13 @@ import {
 // import close from "../../assets/images/close-notice.png";
 // import success from "../../assets/images/success-notice.png";
 // import warning from "../../assets/images/warning-notice.png";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AlertProps } from "./type";
 
-const Alert: React.FC<AlertProps>= (props: AlertProps) => {
+const Alert: React.FC<AlertProps> = (props: AlertProps) => {
   let color: any;
   let srcImage: any;
+  const [isShow, setIsShow] = useState<boolean>(true);
   if (props.variant === "Error") {
     color = "#E7546E";
     // srcImage = close;
@@ -31,28 +32,34 @@ const Alert: React.FC<AlertProps>= (props: AlertProps) => {
     // srcImage = warning;
   }
   useEffect(() => {
-    setTimeout(setTimeNotice, 5000);
+    if (props.timeToShow) setTimeout(setTimeNotice, props.timeToShow);
   }, []);
   const setTimeNotice = () => {
-    // dispatch(hideNotification());
+    setIsShow(false);
   };
   return (
     <>
-      <Notice color={color} size={props.size}>
-        <NoticeClose>
-          {/* <NoticeCloseImage onClick={onCloseNotification}>
-            <img src={srcImage} alt="Notice" />
+      {isShow && (
+        <Notice color={color} size={props.size}>
+          <NoticeClose>
+            {/* <NoticeCloseImage onClick={onCloseNotification}>
+            <img src={srcIFmage} alt="Notice" />
           </NoticeCloseImage> */}
-        </NoticeClose>
-        <NoticeText>
-          <NoticeTextHeader>
-            <TextHeader size={props.size} color={color}>{props.variant} !</TextHeader>
-          </NoticeTextHeader>
-          <NoticeTextContent size={props.size} >
-            <Text size={props.size} color={color}>{props.message}</Text>
-          </NoticeTextContent>
-        </NoticeText>
-      </Notice>
+          </NoticeClose>
+          <NoticeText>
+            <NoticeTextHeader>
+              <TextHeader size={props.size} color={color}>
+                {props.variant} !
+              </TextHeader>
+            </NoticeTextHeader>
+            <NoticeTextContent size={props.size}>
+              <Text size={props.size} color={color}>
+                {props.message}
+              </Text>
+            </NoticeTextContent>
+          </NoticeText>
+        </Notice>
+      )}
     </>
   );
 };

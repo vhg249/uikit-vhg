@@ -12,4 +12,5 @@ export interface AlertProps {
   message: string;
   onClick?: (evt: MouseEvent<HTMLButtonElement>) => void;
   size?:string;
+  timeToShow?:number;
 }
