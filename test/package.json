@@ -17,6 +17,7 @@
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
     "react-docgen-typescript": "^2.2.2",
+    "react-router-dom": "^6.2.2",
     "styled-components": "^4.3.2",
     "url-loader": "^4.1.1"
   },
